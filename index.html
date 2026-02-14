@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz 14 de Febrero Hinitaaa ❤️</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.carta{
+    width:350px;
+    height:250px;
+    background:white;
+    position:relative;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    cursor:pointer;
+    transition:1s;
+}
+
+.carta::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#ff4d6d;
+    clip-path:polygon(0 0, 100% 0, 50% 50%);
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    transition:1s;
+}
+
+.carta.abierta::before{
+    transform:rotateX(180deg);
+    transform-origin:top;
+}
+
+.contenido{
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:20px;
+    box-sizing:border-box;
+    opacity:0;
+    transition:1s;
+    text-align:center;
+}
+
+.carta.abierta .contenido{
+    opacity:1;
+}
+
+h1{
+    color:#ff4d6d;
+}
+
+p{
+    font-size:16px;
+    color:#444;
+}
+
+.corazon{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation:flotar 5s linear infinite;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-600px) scale(1.5);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="carta" onclick="abrirCarta()">
+    <div class="contenido">
+        <h1>Feliz 14 de Febrero Hinitaa ❤️</h1>
+        <p>
+            hola  amor, como estas en el dia de hoy, antes de empezar te quiero pedir disculpas por lo poco logrado que esta mi regalo, y tambien me disculpo por el poco tiempo que te he dado <p>
+              Mira amorcito :3 <p>
+                te amo muchooo, la verdad no sabria que hacer sin ti, y creeme que te agradezco por lo paciente que haz sido conmigo, y quiero que disfrutemos este dia especial como podamos, creeme que te amo mucho, y apesar del poco tiempo, he disfrutado todo lo que hago contigo, y simplemente no se como expresarme, siempre fui reservado y nunca supe como expresarme, contigo eso cambio un poco, pero no encuentro palabras para decirte lo que siento, simplemente me enamoraste, aun detras de una pantalla, no se como, pero aveces simplemente no sales de mi cabeza y quiero hablar contigo en ese momento, hinita quiero que sepas lo mucho que te amo, de verdad, te amo te amo te amo te amo te amo, te amo musho mi hinita preciosa. :3
+            <br><br>
+            Con todo mi amor,<br>
+            De: tu joshi
+        </p>
+    </div>
+</div>
+
+<script>
+function abrirCarta(){
+    document.querySelector(".carta").classList.toggle("abierta");
+    crearCorazones();
+}
+
+function crearCorazones(){
+    for(let i=0;i<15;i++){
+        let corazon=document.createElement("div");
+        corazon.classList.add("corazon");
+        corazon.innerHTML="❤️";
+        corazon.style.left=Math.random()*100+"vw";
+        corazon.style.animationDuration=(Math.random()*3+2)+"s";
+        document.body.appendChild(corazon);
+
+        setTimeout(()=>{
+            corazon.remove();
+        },5000);
+    }
+}
+</script>
+
+</body>
+</html>
